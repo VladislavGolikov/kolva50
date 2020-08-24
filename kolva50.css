@@ -1,0 +1,351 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+body {
+    background: linear-gradient(95deg, yellow, #00ff40);
+    width: 100%;
+    height: 100vh;
+ /*   overflow: hidden;*/
+}
+.background {
+    position: fixed;
+    left: 0;
+    top: 80vh;
+    width: 100vw;
+    height: 20vh;
+    background: url(gazprom.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1;
+}
+
+/*--------------------- заголовок -------------------------------------*/
+
+@keyframes expandpseudoh1 {
+    from {width: 0;left: 95%;opacity: 0;}
+    10% {width: 0;left: 95%;opacity: 1;}
+    70% {width: 80%;left: 15%;opacity: 1;}
+    90% {width: 80%;left: 15%;opacity: 1;}
+    to {width: 80%;left: 15%;opacity: 0;}
+}
+.windowh1 {
+    position: absolute;
+    top: 0.5vh;
+    left: 95%;
+    width: 0;
+    height: 8vh;
+    overflow: hidden;
+    animation-name: expandpseudoh1;
+    animation-duration: 10000ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.pseudoh1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    font-family: sans-serif;
+    font-size: 7vh;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #cc3315;
+    text-shadow: 3px 3px 0.5vh #003059;
+    white-space: nowrap;
+}
+
+/*--------------------- заголовок -------------------------------------*/
+@keyframes pulsar {
+    from {transform: scale(1); filter: hue-rotate(0deg);}
+    50% {transform: scale(1.1); filter: hue-rotate(180deg);}
+    to {transform: scale(1); filter: hue-rotate(360deg);}
+}
+.poltos {
+    position: absolute;
+    top: 5vh;
+    right: 5%;
+    text-align: right;
+    font-family: 'Comic Sans MS';
+    font-size: 20vh;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    text-shadow: 5px 5px 0.5vh black;
+    z-index: 6;
+    animation-name: pulsar;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.hidd {
+    display: none;
+}
+
+.shnaps {
+    position: absolute;
+    width: 30vh;
+    height: 30vh;
+    background: url(shnaps3.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.characters {
+    position: absolute;
+    background: url(man.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    border-radius: 2vh;
+    outline: 0.5vh yellow inset;
+}
+.characters:hover {
+    background-color: #77ff77;
+    cursor: pointer;
+}
+.name {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    white-space: nowrap;
+    text-align: center;
+    color: #0052ea;
+    font-size: 1.5vh;
+    font-weight: bold;
+    font-family: 'Verdana';
+    text-shadow: 1px 1px 0 white;
+}
+/*--------------------- кольва -------------------------------------*/
+@keyframes enter {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes exit {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+.enter , .exit {
+    animation-name: enter;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.exit {
+    animation-name: exit;
+}
+.kolva {
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    left: 45vw;
+    top: 20vh;
+    background: url(ksi.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2vh;
+    outline: 2vh yellow inset;
+    z-index: 3;
+
+}
+.bubbles1 , .bubbles2 {
+    position: absolute;
+    width: 36vh;
+    height: 36vh;
+    left: 55%;
+    top: -25%;
+    background: url(bubbles1.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    z-index: 4;
+}
+.bubbles2 {
+    position: absolute;
+    width: 36vh;
+    height: 36vh;
+    left: -20%;
+    top: -15%;
+    background: url(bubbles2.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 4;
+
+}
+.think , .speech {
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    left: 15%;
+    top: 15%;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    font-style: italic;
+    font-size: 3vh;
+    color: #890052;
+    text-shadow: 2px 2px 1px #00abc1;
+
+}
+/*--------------------- кольва -------------------------------------*/
+/*--------------------- свиток со стихами -------------------------------------*/
+.scroll {
+    font-family: 'Palatino Linotype';
+    position: absolute;
+    width: 50vh;
+    height: 90vh;
+    left: 3vh;
+    top: 8vh;
+    z-index: 5;
+}
+.scrollup {
+    position: absolute;
+    width: 100%;
+    height: 11vh;
+    left: 0;
+    top: 0;
+    background: url(scrollup.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 5;
+    line-height: 9vh;
+    text-align: center;
+    font-style: italic;
+    font-size: 3vh;
+    text-transform: capitalize;
+    color: #350022;
+    border-radius: 3vh;
+}
+.scrollup:hover {
+    cursor: pointer;
+    filter: hue-rotate(25deg);
+}
+@keyframes expandscroll {
+    from {height: 0;}
+    to {height: 85vh;}
+}
+@keyframes shrinkscroll {
+    from {height: 85vh;}
+    to {height: 0;}
+}
+.expandscroll , .shrinkscroll {
+    animation-name: expandscroll;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.shrinkscroll {
+    animation-name: shrinkscroll;
+}
+.scrolltext {
+    position: absolute;
+    background: url(bum.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 0;
+    left: 5%;
+    top: 6vh;
+}
+.scrolltextwindow {
+    position: absolute;
+    width: 95%;
+    height: 92%;
+    left: 5%;
+    top: 5vh;
+    overflow: hidden;
+}
+.text {
+    position: absolute;
+    width: 100%;
+    font-size: 2vh;
+    font-style: italic;
+    font-weight: bold;
+    color: #350022;
+    white-space: nowrap;
+}
+/*--------------------- свиток со стихами -------------------------------------*/
+
+/*--------------------- кнопка цензуры ------------------------------------------------*/
+.original {
+    position: absolute;
+    top: 95vh;
+    left: 2vh;
+    color: yellow;
+    height: 4vh;
+    padding-right: 1vh;
+    padding-left: 1vh;
+    border-radius: 1vh;
+    background: linear-gradient(90deg, green, #aaaaaa, #aaaaaa);
+    cursor: pointer;
+    z-index: 7;
+}
+.buttontext {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
+    left: 0;
+    color: #700000;
+    font-size: 2.2vh;
+    font-weight: bold;
+}
+.notorder {
+    background: linear-gradient(90deg, #aaaaaa, #aaaaaa, red);
+}
+/*--------------------- кнопка цензуры ------------------------------------------------*/
+/*--------------------- нижняя строка -------------------------------------*/
+.windowdown {
+    position: absolute;
+    bottom: 5vh;
+    left: 10%;
+    width: 80%;
+    height: 8vh;
+    overflow: hidden;
+}
+.pseudodown {
+    position: absolute;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    font-family: 'Comic Sans MS';
+    font-size: 5vh;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-transform: none;
+    color: white;
+    text-shadow: 3px 3px 0.5vh red;
+    white-space: nowrap;
+}
+/*--------------------- нижняя строка -------------------------------------*/
+
