@@ -1,26 +1,7 @@
-let charactersAll=[];
-let forSampleEnterCharacter=document.querySelector('.characters');
-const sampleEnterCharacter=forSampleEnterCharacter.outerHTML;
 const relationXtoY=window.innerWidth/window.innerHeight;
-let buttonWav=new Audio(`button.wav`);
-let scrollUpWav=new Audio(`up.mp3`);
-let scrollDownWav=new Audio(`down.mp3`);
-let mmmWav=new Audio(`mmm.mp3`);
+let charactersAll=[];
 
 /*--------------------- заголовок -------------------------------------*/
-let h1=[];
-h1.push('Поздравляем с днем рождения!');
-h1.push('Поздравляем с юбилеем!');
-h1.push('Сергей Иванович, с полтинником!');
-h1.push('Сергей Иванович, с пятидесятилетием!');
-h1.push('Желаем здоровья!');
-h1.push('Желаем счастья!');
-h1.push('Желаем 50 евро в час!');
-h1.push('Желаем 50 недель отпуска!');
-h1.push('Желаем еще 50 лет жизни!');
-h1.push('Желаем 50 дней спокойной работы!');
-h1.push('Желаем удачи!');
-
 const forH1=document.querySelector('.pseudoh1');
 setInterval(checkH1Change,200);
 
@@ -35,125 +16,10 @@ function checkH1Change() {
 let speechActive=false; /* триггер звучания речи */
 const forThinkBubbles=document.querySelector('.bubbles1');
 const forSpeechBubbles=document.querySelector('.bubbles2');
-let speech=[];
-let speechText=[];
-let think=[];
-speech[0]='Спасибо за поздравление! Но выше руки поднять не могу - заняты рыбой!';
-speech[1]='Спасибо за поздравление! Технически поддержу, и, да, я - юбиляр!';
-speech[2]='Спасибо за поздравление! Конечно всегда рад помочь!';
-speech[3]='Спасибо за поздравление! Всегда расскажу всё, что знаю!';
-speech[4]='Спасибо за поздравление! Всегда обращайтесь если что!';
-speech[5]='Спасибо за поздравление! Обращайтесь, постараемся всё найти!';
-speech[6]='Спасибо за поздравление! Пока есть - последнее отдам!';
-speech[7]='Спасибо за поздравление! А мне классно работать с вами!';
-speech[8]='Спасибо, спасибо, лучше и не пожелаешь!';
+const forTextContent=document.querySelectorAll('.text > span');
+const mmmWav=new Audio(`mmm.mp3`);
 
-think[0]='Что там про фаустпатрон...';
-think[1]='Вот и молчали бы про техподдержку...';
-think[2]='Про себя лучше прикиньте...';
-think[3]='Почему едкое слово...';
-think[4]='У меня мастерская что ли тут...';
-think[5]='В гробу я эти серийники видал...';
-think[6]='Кое-кому надо надавать по рукам...';
-think[7]='И зачем было болтать про синие кресты...';
-think[8]='Сами и не пейте...';
-
-think[9]='Только бы рыбу не дарили...';
-think[10]='Стою тут как ёлочка на новый год...';
-think[11]='Так... Так... Так...';
-think[12]='Ждёмс...';
-think[13]='Надо бы всё списать...';
-think[14]='Скорее бы обед...';
-think[15]='Чёртова ЖАБА опять глючит...';
-think[16]='Трам-пам-пам... Не трам-пам-пам...';
-
-speechText[0]=`
-Unser lieber Kamerad, Sergej Iwanowitsch! Ich bin Dmitrij Leontiev
- von der Gasprom Kosmitscheskije Systeme korporazion und ich werden
- Ihre Führer!  Natürlich ich möchte Ihnen zu Ihrem Jubiläum gratulieren
- und diesen  Faustpatronen und fünfzig große Schnapsen präsentieren!
- Alle zurück, Sergej Iwanowitsch, und wir werden viele für seine Schnapsen trinken!
- Ja natürlich, vergisst du deinen Führer nicht! Hände hoch!`;
-speechText[1]=`
-Про техподдержку сегодня молчим.
-Для разговора есть повод другой:
-С Сервером мы Юбиляра сравним -
-И досконально, не левой ногой…
-
-Наш юбиляр – это Кольва Сергей.
-В корне отличен от многих других,
-Он выступает в десятке ролей:
-Серверных, жизненых и бытовых.`;
-speechText[2]=`
-Разве есть Сервер Сергею под стать?
-Домыслы эти уместны ужель?
-Если прикинуть, да порассуждать:
-Можно везде проследить параллель!
-
-Что дело Сервера? - Все отдавать.
-Может сравниться с ним только Сергей:
-Делом, советом друзьям помогать,
-Хоть в день обычный, а хоть в Юбилей!`;
-speechText[3]=`
-Быть центром сети  - так Сервер живет,
-По протоколу всех соединит.
-Каждый Сергея рассказ – анекдот,
-В свой кабинет тянет он как магнит.
-
-Или хранилище - серверный САН,
-Этот семантики мощный каркас!
-Так и Сергей не полезет в карман,
-Чтоб слово едкое вставить в рассказ!`;
-speechText[4]=`
-Есть назначение Сервера – шлюз.
-(Нравится всем обращаться к нему.)
-Словно Сергей сразу всех мастей туз -
-Все всё несут лишь к нему одному!
-
-Технику или с проблемой какой -
-В двести пять «А» есть единственный путь!
-Часто завален он весь с головой,
-Универсальность - не козырь отнюдь…`;
-speechText[5]=`
-Скорость, надежность, крутой алгоритм.
-Пятидесятый отличный раид.
-Кредо Сергея - размеренный ритм,
-Дела и время разумный гибрид.
-
-Сервер для поиска ищет пути.
-Есть у него инструмент – перебор.
-А железяки серийник найти -
-Только Сергей в этом деле матёр!`;
-speechText[6]=`
-Сервер политикой ставит порог
-На поведение злых юзеров.
-Ну а Сергей на словах весьма строг.
-В жизни реальной не так уж суров…
-
-Как Сервер Данных, хранящий запас,
-Может всегда еще файлы принять -
-Так и Сергей в двести пятой для нас -
-Выдаст свое, лишь бы  в ЗИП не гонять.`;
-speechText[7]=`
-Сервер помечен крестом изолент.
-Это секретный Сергея сигнал,
-Что в данной технике ценности нет,
-Что ее кто-то конкретно сломал!
-
-Серверу классно работать в шкафу:
-Чистый, прохладный и новый на взгляд!
-Коль про Сергея не выдать инфу,
-То, кто не знает, не даст пятьдесят!`;
-speechText[8]=`
-И наконец пожеланье: Сергей,
-Пусть будет (как перерыв на обед)
-Долгая жизнь, сладок сам юбилей,
-К нынешним  летам добавить сто лет!
-
-В благополучии, вот та ступень -
-Минимум был чтоб: полсотни друзей,
-Пятьдесят евро зарплаты за день,
-Пятьдесят литров напитков!.. Не пей…`;
+forTextContent.forEach(function(el,ind){speechText[++ind]=el.innerText});
 
 let timerSpeechStagnation=setTimeout(() => changeBubblies(forThinkBubbles,true,0,true),15000);
 
@@ -185,7 +51,6 @@ function changeBubblies(numBub,onChange,numText,stagnation) {
         setTimeout(() => changeBubblies(numBub,false,0,false),7000);
     }
 }
-
 /*--------------------- бублы -------------------------------------*/
 /*--------------------- свиток стихи -------------------------------------*/
 let scrollTextTop=0; /* это vh */
@@ -193,6 +58,8 @@ const crollTextTopMax=0.95; /* это от высоты окна */
 const forScrollHeight=document.querySelector('.scrolltext');
 const forScrollTextTop=document.querySelector('.text');
 const forScrollCloseOpen=document.querySelector('.scrollup');
+const scrollUpWav=new Audio(`up.mp3`);
+const scrollDownWav=new Audio(`down.mp3`);
 
 document.addEventListener('wheel',scrollHeightResize);
 forScrollCloseOpen.addEventListener('click', expandShrinkScroll);
@@ -219,8 +86,11 @@ function expandShrinkScroll() {
 }
 /*--------------------- свиток стихи -------------------------------------*/
 /*--------------------- карусель ---------------------------------------------*/
-let carouselMusic1=new Audio(`karusel1.ogg`);
-let carouselMusic2=new Audio(`karusel2.ogg`);
+let forSampleEnterCharacter=document.querySelector('.characters');
+const sampleEnterCharacter=forSampleEnterCharacter.outerHTML;
+
+const carouselMusic1=new Audio(`karusel1.ogg`);
+const carouselMusic2=new Audio(`karusel2.ogg`);
 let carouselSpeed=0.1;
 document.addEventListener('wheel',()=>{carouselSpeed+=event.deltaY/20;
     if (event.deltaY>0) {
@@ -233,7 +103,7 @@ document.addEventListener('wheel',()=>{carouselSpeed+=event.deltaY/20;
 });
 
 class EnterCharacter {
-    constructor(width,coefHeight,placeEnterCharacter,name,image,cover) {
+    constructor(width,coefHeight,placeEnterCharacter,name,image,cover,boss) {
         this.radiusY=30;
         this.radiusX=55;
         this.centerX=60*relationXtoY;
@@ -248,6 +118,7 @@ class EnterCharacter {
         this.placeName=placeEnterCharacter.children[1];
         this.image=image;
         this.cover=cover;
+        this.boss=boss;
         this.createCharacter();
         this.addEnterCharacterHTML();
         this.stepGo=180;
@@ -261,7 +132,10 @@ class EnterCharacter {
         this.placeName.innerHTML=this.name;
         this.placeEnterCharacter.style.backgroundImage=`url(${this.image}.png)`;
         this.placeEnterCharacter.style.backgroundSize=this.cover;
-
+        if (this.boss) {
+            this.placeName.nextElementSibling.classList.remove('hidd');
+            this.placeName.nextElementSibling.nextElementSibling.classList.remove('hidd');
+        }
     }
     moveCharacter() {
         let place=(2*Math.PI/charactersAll.length)*this.position+Math.PI/2;
@@ -296,15 +170,15 @@ class EnterCharacter {
     }
 }
 
-charactersAll.push(new EnterCharacter (15,1,forSampleEnterCharacter,'Дмитрий<br>Леонтьев','leo','contain'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Павел<br>Костиков','kpa','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Белых','baa','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Мишарин','man','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Поветкин','pab','contain'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Владислав<br>Голиков','gvv','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Антон<br>Смирнов','sav','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Сан Саныч','aaa','cover'));
-charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Андрей<br>Сидоров','san','cover'));
+charactersAll.push(new EnterCharacter (15,1,forSampleEnterCharacter,'Дмитрий<br>Леонтьев','leo','contain',true));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Павел<br>Костиков','kpa','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Белых','baa','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Мишарин','man','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Александр<br>Поветкин','pab','contain',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Владислав<br>Голиков','gvv','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Антон<br>Смирнов','sav','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Сан Саныч','aaa','cover',false));
+charactersAll.push(new EnterCharacter (10,1,forSampleEnterCharacter,'Андрей<br>Сидоров','san','cover',false));
 
 charactersAll.forEach(function(el){el.moveCharacter()});
 
@@ -325,8 +199,8 @@ forSpeech.forEach(function(el){el.addEventListener('click',rungun)});
 function rungun() {
     forSpeech.forEach(function(el,ind){
         if (el===event.currentTarget&&!speechActive) {
-            audioSpeech.forEach(function(el){if (!el.paused) {el.pause()}})
-            let audioSpeechCurrent=9-ind;
+            audioSpeech.forEach(function(el){if (!el.paused) {el.pause()}});
+            let audioSpeechCurrent=audioSpeech.length-ind;
             audioSpeech[audioSpeechCurrent].play();
             event.currentTarget.classList.add('pulsarchar');
             speechActive=true;
@@ -345,11 +219,10 @@ const forAbout=document.querySelector('.about');
 const forGKS=document.querySelector('.gks');
 const forShnaps=document.querySelectorAll('.shnaps');
 const forFaustpatron=document.querySelectorAll('.faustpatron');
+const buttonWav=new Audio(`button.wav`);
+const bossWho=charactersAll.length-charactersAll.findIndex(function(el){return el.boss});
 
 forSwitch.addEventListener('click',onOffOriginal);
-forShnaps[9].classList.remove('hidd');
-forFaustpatron[9].classList.remove('hidd');
-
 
 function onOffOriginal() {
     event.stopPropagation();
@@ -361,35 +234,25 @@ function onOffOriginal() {
         forAbout.classList.add('hidd');
         forAbout.nextElementSibling.classList.remove('hidd');
         forGKS.classList.add('gksrus');
-        forShnaps[9].classList.add('narzan');
-        forFaustpatron[9].classList.add('rozez');
+        forShnaps[bossWho].classList.add('narzan');
+        forFaustpatron[bossWho].classList.add('rozez');
         forSwitch.children[0].innerHTML='перевод';
         audioSpeech[0]=new Audio(`leoua.mp3`);
-        speech[0]=`Спасибо за поздравление! О! Минералочка?! Сейчас очень кстати.`;
-        think[0]=`Ну и говор хохлятский...`;
-        speechText[0]=`Дорогой наш товарищ, Сергей Иванович!
-         Я, Дмитрий Леонтьев, из корпорации Газпром Космические Системы,
-          твой руководитель, хочу поздравить тебя с юбилеем и подарить этот
-          букет цветов и еще пятьдесят бутылочек минеральной воды! Сергей Иванович,
-           желаю тебе побольше здоровья! Выше руки!`;
+        speech[0]=speechRus;
+        think[0]=thinkRus;
+        speechText[0]=speechTextRus;
     }else{
         forSwitch.classList.remove('notorder');
         forAbout.classList.remove('hidd');
         forAbout.nextElementSibling.classList.add('hidd');
         forGKS.classList.remove('gksrus');
-        forShnaps[9].classList.remove('narzan');
-        forFaustpatron[9].classList.remove('rozez');
+        forShnaps[bossWho].classList.remove('narzan');
+        forFaustpatron[bossWho].classList.remove('rozez');
         forSwitch.children[0].innerHTML='оригинал';
         audioSpeech[0]=new Audio(`leo.mp3`);
-        speech[0]=`Спасибо за поздравление! Но выше руки поднять не могу - заняты рыбой...`;
-        think[0]=`Чё там про фаустпатрон?`;
-        speechText[0]=`Unser lieber Kamerad, Sergej Iwanowitsch!
-         Ich bin Dmitrij Leontiev von der Gasprom Kosmitscheskije
-         Systeme korporazion und ich werden Ihre Führer!  Natürlich
-         ich möchte Ihnen zu Ihrem Jubiläum gratulieren und diesen
-         Faustpatronen und fünfzig große Schnapsen präsentieren! Alle
-         zurück, Sergej Iwanowitsch, und wir werden viele für seine
-          Schnapsen trinken! Ja natürlich, vergisst du deinen Führer nicht! Hände hoch!`;
+        speech[0]=speechGer;
+        think[0]=thinkGer;
+        speechText[0]=speechTextGer;
     }
 }
 
@@ -411,14 +274,18 @@ let delayTimer=0;
 let firstXlam=true;
 
 function xlamFall() {
-    let xlamFallWav=new Audio(`fall8.mp3`);
+    let xlamFallWav=new Audio(`fall.mp3`);
     forXlam.classList.add('fall');
     xlamFallWav.play();
     delayTimer=Math.random()*30000+100000;
     setTimeout(xlamFall,delayTimer);
 }
-document.addEventListener('animationend',() => {forXlam.classList.remove('fall')});
-forXlamRun.addEventListener('click',() => {if (!!firstXlam) {setTimeout(xlamFall,4000);
-    firstXlam=false;
-    forXlamRun.classList.add('notorder');
-}});
+forXlam.addEventListener('animationend',() => {forXlam.classList.remove('fall')});
+forXlamRun.addEventListener('click',() => {
+    if (!!firstXlam) {
+        setTimeout(xlamFall,4000);
+        firstXlam=false;
+        forXlamRun.classList.add('notorder');
+    }
+});
+/*--------------------- хлам ---------------------------------------------*/

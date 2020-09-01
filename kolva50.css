@@ -9,8 +9,10 @@ body {
     height: 100vh;
  /*   overflow: hidden;*/
 }
+.hidd {
+    display: none;
+}
 /*--------------------- заголовок -------------------------------------*/
-
 @keyframes expandpseudoh1 {
     from {width: 0;left: 95%;opacity: 0;}
     10% {width: 0;left: 95%;opacity: 1;}
@@ -50,8 +52,8 @@ body {
     text-shadow: 3px 3px 0.5vh #003059;
     white-space: nowrap;
 }
-
 /*--------------------- заголовок -------------------------------------*/
+/*--------------------- 50 -------------------------------------*/
 @keyframes pulsar {
     from {transform: scale(1); filter: hue-rotate(0deg);}
     50% {transform: scale(1.1); filter: hue-rotate(180deg);}
@@ -79,21 +81,8 @@ body {
     animation-play-state: running;
 
 }
-
-.hidd {
-    display: none;
-}
-
-.shnaps {
-    position: absolute;
-    width: 30vh;
-    height: 30vh;
-    background: url(shnaps3.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
+/*--------------------- 50 -------------------------------------*/
+/*--------------------- карусель -------------------------------------*/
 .characters {
     position: absolute;
     background: url(man.png);
@@ -112,7 +101,6 @@ body {
     50% {transform: scale(1.2); filter: hue-rotate(180deg);background-color: blue;}
     to {transform: scale(1); filter: hue-rotate(360deg);background-color: red;}
 }
-
 .pulsarchar {
     animation-name: pulsarchar;
     animation-duration: 1000ms;
@@ -145,7 +133,6 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-  /*  transform: skew(-5deg, -5deg);*/
 }
 .faustpatron {
     position: absolute;
@@ -181,7 +168,22 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
+/*--------------------- карусель -------------------------------------*/
 /*--------------------- кольва -------------------------------------*/
+.kolva {
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    left: 45vw;
+    top: 20vh;
+    background: url(ksi.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2vh;
+    outline: 2vh yellow inset;
+    z-index: 3;
+}
 @keyframes enter {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -203,20 +205,6 @@ body {
 .exit {
     animation-name: exit;
 }
-.kolva {
-    position: absolute;
-    width: 60vh;
-    height: 60vh;
-    left: 45vw;
-    top: 20vh;
-    background: url(ksi.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 2vh;
-    outline: 2vh yellow inset;
-    z-index: 3;
-}
 .bubbles1 , .bubbles2 {
     position: absolute;
     width: 36vh;
@@ -231,17 +219,11 @@ body {
     z-index: 4;
 }
 .bubbles2 {
-    position: absolute;
-    width: 36vh;
-    height: 36vh;
     left: -20%;
-    top: -25%;
     background: url(bubbles3.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: 4;
-
 }
 .think , .speech {
     position: absolute;
@@ -262,6 +244,8 @@ body {
     top: 5%;
     font-size: 2.5vh;
 }
+/*--------------------- кольва -------------------------------------*/
+/*--------------------- хлам -------------------------------------*/
 @keyframes fall {
     from {bottom: 100vh;opacity: 1;}
     15% {bottom: 0;opacity: 1;transform: skew(0deg,0deg);filter: brightness(1);}
@@ -270,7 +254,6 @@ body {
     90% {bottom: 0;opacity: 1;transform: skew(-10deg,5deg);filter: brightness(0.2);}
     to {bottom: -100vh;opacity: 1;transform: skew(-10deg,5deg);filter: brightness(0);}
 }
-
 .xlam {
     position: absolute;
     width: 825px;
@@ -307,7 +290,7 @@ body {
     cursor: pointer;
     z-index: 17;
 }
-/*--------------------- кольва -------------------------------------*/
+/*--------------------- хлам -------------------------------------*/
 /*--------------------- свиток со стихами -------------------------------------*/
 .scroll {
     font-family: 'Palatino Linotype';
@@ -391,7 +374,6 @@ body {
     white-space: nowrap;
 }
 /*--------------------- свиток со стихами -------------------------------------*/
-
 /*--------------------- нижняя строка -------------------------------------*/
 .background {
     position: fixed;
@@ -444,19 +426,21 @@ body {
 .gks {
     position: absolute;
     right: 25vh;
-    bottom: 0vh;
-    width: 25vh;
-    height: 15vh;
+    bottom: 1.5vh;
+    width: 24.24vh;
+    height: 12vh;
     background: url(gks-en.svg);
-    background-position: right center;
+    background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    outline: 1px white solid;
+    outline-offset: 2px;
 }
 .gksrus {
     background: url(gks-rus.svg);
-    background-position: right center;
+    background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 .about , .about2 {
     position: absolute;
